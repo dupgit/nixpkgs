@@ -16,7 +16,7 @@ stdenv.mkDerivation rec {
   meta = with stdenv.lib; {
     homepage = https://github.com/dupgit/sauvegarde;
     description = "Continuous data protection for GNU/Linux (cdpfgl).";
-    maintainers = "Olivier Delhomme";
+    maintainers = "with stdenv.lib.maintainers; [ dupgit ];
     license = licenses.gpl3;
     platforms = platforms.linux;
   };
