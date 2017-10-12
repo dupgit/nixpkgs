@@ -4,8 +4,9 @@
 stdenv.mkDerivation rec {
   name = "cdpfgl-${version}";
   version = "0.0.11"; 
-
-  buildInputs = [ pkgconfig intltool glib sqlite jansson libmicrohttpd curl ]; 
+  
+  nativeBuildInputs = [ pkgconfig intltool ];
+  buildInputs = [ glib sqlite jansson libmicrohttpd curl ]; 
   outputs = [ "out" "dev" "man" ];
 
   src = fetchurl {
@@ -16,7 +17,7 @@ stdenv.mkDerivation rec {
   meta = with stdenv.lib; {
     homepage = https://github.com/dupgit/sauvegarde;
     description = "Continuous data protection for GNU/Linux (cdpfgl).";
-    maintainers = "with stdenv.lib.maintainers; [ dupgit ];
+    maintainers = with maintainers; [ dupgit ];
     license = licenses.gpl3;
     platforms = platforms.linux;
   };
